@@ -1,0 +1,24 @@
+<h1>lists for <%= @project.name %></h1>
+
+<table>  
+	<tr>
+  		<th>List Name</th>
+  		
+  </tr> 
+
+<% for list in @lists %>  
+
+	<tr>  
+		<td><%=h list.title %></td>  
+		
+	        <td>  <%= link_to 'Show', project_list_path(@project, list) %></td>  
+		<td>  <%= link_to 'Edit', edit_project_list_path(@project, list) %>  </td>  
+		<td>  <%= link_to 'Destroy', project_list_path(@project, list), :confirm => 'Are you sure?', :method => :delete %>  </td>  
+	</tr> 
+	<% end %> 
+
+
+</table> 
+
+	<br /> 
+

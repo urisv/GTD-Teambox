@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  description: MyText
+  position: 1
+  created_by: 1
+  category_id: 1
+  title_textilized: MyText
+  description_textilized: MyText
+  project: 
+
+two:
+  title: MyString
+  description: MyText
+  position: 1
+  created_by: 1
+  category_id: 1
+  title_textilized: MyText
+  description_textilized: MyText
+  project: 

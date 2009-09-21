@@ -1,0 +1,28 @@
+<h1>task on <%= @list.title %></h1> 
+
+
+<table>  
+	<tr>
+  		<th>Task Name</th>
+  		
+  </tr> 
+
+<% for task in @tasks %>  
+
+	<tr>  
+		<td><%=h task.description %></td>  
+		
+	        <td>  <%= link_to 'Show', project_list_task_path(@project, @list, task) %></td>  
+		<td>  <%= link_to 'Edit', edit_project_list_task_path(@project, @list, task) %>  </td>  
+		<td>  <%= link_to 'Destroy', project_list_task_path(@project, @list, task), :confirm => 'Are you sure?', :method => :delete %>  </td>  
+	</tr> 
+	<% end %> 
+
+
+</table> 
+
+	<br /> 
+
+	<%= link_to 'New task', new_project_list_task_path(@project, @list) %> 
+       
+	<%= link_to 'Back to List', project_list_path(@project, @list) %> 

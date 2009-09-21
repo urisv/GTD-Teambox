@@ -1,0 +1,10 @@
+class Project < ActiveRecord::Base
+	has_many :lists
+
+    def tasks
+    list.tasks unless list.nil?
+    end
+
+	
+	
+end

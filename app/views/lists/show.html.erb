@@ -1,0 +1,22 @@
+<h1>list on <%= @project.name %></h1> 
+
+<p>  
+
+	<b>title:</b>  
+	<%=h @list.title %> 
+</p> 
+
+
+
+<h2>Tasks</h2> 
+
+	<% @list.tasks.each do |t| %>  
+		<p>  <b>Task:</b>  <%=h t.description %>  </p> 
+		
+
+	 <% end %> 
+
+
+<%= link_to 'Edit', edit_project_list_path(@project, @list) %> | 
+<%= link_to 'Back', project_lists_path(@project) %> 
+<%= link_to 'Manage Tasks',project_list_tasks_path(@project,@list) %>

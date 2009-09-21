@@ -1,0 +1,152 @@
+/* 
+
+Designed and hand-coded by http://www.pixallent.com.
+Copyright (c) Pixallent, Ltd. All rights reserved.
+
+*/
+
+/* @group Global */
+
+body {
+	color: #000;
+	font-size: 14px;
+	font-family: Arial, "Lucida Grande", Verdana, sans-serif;
+	background-color: #fff;
+	margin: 40px;
+}
+
+a {
+	color: #0072d2;
+	text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: bold;
+	padding-bottom: 10px;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, th a, div.image a {
+	color: #000;
+	text-decoration: none;
+}
+
+p {
+	line-height: 1.52em;
+	padding-bottom: 15px;
+}
+
+table {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+th {
+	font-weight: bold;
+	text-align: left;
+	vertical-align: middle;
+	padding: 5px 10px 5px 0;
+	border-bottom: 1px solid #ccc;
+}
+
+td {
+	padding: 5px 10px 5px 0;
+	vertical-align: middle;
+	border-bottom: 1px solid #ccc;
+}
+
+td.mid {
+	text-align: center;
+}
+
+td p {
+	padding: 0;
+	overflow: hidden;
+}
+
+div#footer {
+	font-size: 12px;
+	padding-top: 20px;
+}
+
+div#footer span {
+	color: #999;
+	padding: 0 3px;
+}
+
+div#topbar, div.primer, div#links, div#navigation, div#navigator, div#sidebar, div.box, div#indicator, div#speak, div#footnav, div#copyright, div.tabby, div.department h2 span, div.avatar, div.clickit, div.peps, div.list h6, div.create, div#ads {
+	display: none;
+}
+
+/* @end */
+
+/* @group Content */
+
+div#topbar h1 {
+	font-size: 30px;
+	margin-bottom: 20px;
+	padding-bottom: 8px;
+	border-bottom: 1px solid #ccc;
+}
+
+div#title h1 {
+	font-size: 18px;
+	padding-bottom: 25px;
+}
+
+div#people {
+	padding-left: 30px;
+}
+
+div#people li {
+	font-size: 12px;
+	padding-bottom: 5px;
+}
+
+div.profile {
+	padding-top: 15px;
+}
+
+div.profile h6, div.message, div.message h2 {
+	padding-bottom: 5px;
+}
+
+div.message h6 {
+	color: #666;
+	font-size: 12px;
+	font-weight: normal;
+	padding-bottom: 15px;
+}
+
+div.message ul, div.message ol, div.post ul, div.post ol {
+	padding: 5px 12px;
+}
+
+div.message li, div.post li {
+	font-size: 14px;
+	line-height: 1.52em;
+	margin-left: 35px;
+	padding-bottom: 8px;
+	list-style-type: disc;
+}
+
+div.comment h6 {
+	font-size: 12px;
+	padding: 10px 0 5px;
+}
+
+div#lists {
+	margin-top: -10px;
+}
+
+div.desc p {
+	font-size: 12px;
+	padding: 0;
+}
+
+div.list {
+	padding: 10px 0 20px;
+}
+
+/* @end */
+
+/* End of Stylesheet */

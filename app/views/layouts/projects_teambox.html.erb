@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+	<title>Teambox <%= "&#124; #{@project.name} " if @project %>&#124; <%= @title || '' %></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+		<%= stylesheet_link_tag 'reset', :media => :all %>
+		<%= stylesheet_link_tag 'screen', :media => :screen %>
+		<%= stylesheet_link_tag 'facebox', :media => :screen %>
+		<%= stylesheet_link_tag 'jquery-ui', :media => :screen %>
+		<%= stylesheet_link_tag 'swfupload', :media => :screen %>
+		<%= stylesheet_link_tag '/markitup/skins/markitup/style.css', :media => :screen %>
+		<%= stylesheet_link_tag '/markitup/sets/textile/style.css', :media => :screen %>
+	
+
+
+  <!--[if lt IE 7]>
+	<link rel="stylesheet" type="text/css" href="stylesheets/ie6.css" media="screen" />
+    <script src="javascripts/unitpngfix.js" type="text/javascript"></script>
+	<![endif]--><!--[if gte IE 7]>
+	<link rel="stylesheet" type="text/css" href="stylesheets/ie7.css" media="screen" />
+	<![endif]-->
+
+	<%= stylesheet_link_tag 'print', :media => :print %>
+
+	<link rel="shortcut icon" href="/images/favicon.ico" />
+</head>
+
+<body>
+
+	<div id="wrapper">
+  	<div id="header">
+	  	<div id="user" class="right">
+	    	<div class="boxLeft clearfix">
+	      
+	      </div>
+	      <div class="boxRight">
+					
+	      </div>
+	    </div>
+
+
+	    <div class="header_left clearfix">
+	    	<div id="logo">
+	      	<h1>TEambox</h1>
+	      	<img alt="Teambox" src="/images/ui/logo.png">
+	      </div> 
+	      <div id="menu" class="left">
+			
+            <div id="submenu">
+                <ul>
+                    
+                        <li>My profile</li>
+                        <li>My projects</li>
+                    
+                </ul>
+            </div>
+	      </div>  
+			</div>
+		</div>
+
+		<div id="columns">
+		<% if main = yield(:main) %>
+			<div id="main">
+				
+					<div id="title">
+							Project Task
+					</div>
+				
+				<div id="content">
+					
+				</div>
+			</div>
+		<% else %>							
+			<%= yield %>
+		<% end %>
+		<% if sidebar = yield(:sidebar) %>
+			<div id="sidebar">
+				<%= sidebar %>
+			</div>							
+		<% end %>
+		</div>
+		
+		<div id="footer">
+			
+		</div>
+	</div>
+	
+	<div id="success" class="notice success" style="display:none;"></div>
+	<div id="error" class="notice error" style='display:none;'></div>
+		
+	
+</body>
+</html>

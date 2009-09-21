@@ -1,0 +1,102 @@
+<table width="100%" border="1">
+<tr>
+<td width="25%" valign="top" align="center">
+<h2>Personal Task</h2>
+</td>
+
+<td width="40%">
+<table width="100%" border="1">
+  <tr>
+    <td>
+	<h2>Tasks in my projects</h2> 
+    </td>
+    <td align="right">
+	
+    </td>
+    <td align="right">
+	
+    </td>
+    <td align="right">
+	<h3><%= link_to 'New_Project', new_project_path %></h3>
+    </td>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><h2><%= link_to project.name, project %></h2></td>
+
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+  <tr>
+  <td>
+  <table border="0" width="100%">
+  <tr>
+	<td>
+			<ul>
+			
+			<% project.lists.each do |l| %> 
+
+				<li>
+					<p> 
+					<h4> 
+					<b>Lista:</b>  
+					
+					<%= link_to  l.title, project_list_path(project, l) %>
+                                        <%= link_to '(Show', project_list_path(project, l) %>
+					<%= link_to 'Edit', edit_project_list_path(project, l) %>
+					<%= link_to 'Destroy)', project_list_path(project, l), :confirm => 'Are you sure?', :method => :delete %>
+					</h4>
+					</p>
+
+						<ul>
+
+
+
+							<% l.tasks.each do |t| %> 
+                                                        <li>
+
+								<p> 
+									<h5> 
+									<b>Task:</b>  
+					
+									<%= link_to  t.description, project_list_task_path(project, l,t) %>
+								        <%= link_to '(Show', project_list_task_path(project, l,t) %>
+									<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
+									<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
+									</h5>
+								</p>
+
+
+                                                        </li>
+							<% end %>
+
+						</ul>
+
+
+
+
+				</li> 
+			<% end %> 
+
+			</ul>
+
+
+	</td>
+ </tr>
+ </table>
+</td>
+</tr>
+<% end %>
+</table>
+
+<br />
+</td>
+<td width="25%" valign="top" align="center">
+<h2>Next Action</h2>
+</td>
+</tr>
+<table>
+
+

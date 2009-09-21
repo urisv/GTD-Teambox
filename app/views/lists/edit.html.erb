@@ -1,0 +1,17 @@
+<h1>Editing list</h1> 
+
+<% form_for([@project, @list]) do |f| %>  
+
+	<%= f.error_messages %>  
+	<p>  
+		<%= f.label :title %><br />  
+		<%= f.text_field :title %>  
+	</p>  
+	
+	<p>  
+		<%= f.submit "Update" %>  
+	</p> 
+	<% end %> 
+
+	<%= link_to 'Show', project_list_path(@project, @list) %> | 
+	<%= link_to 'Back', project_lists_path(@project) %> 
