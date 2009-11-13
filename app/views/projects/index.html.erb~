@@ -57,7 +57,7 @@
 					<%= link_to 'Edit', edit_project_list_path(project, l) %>
 					<%= link_to 'Destroy)', project_list_path(project, l), :confirm => 'Are you sure?', :method => :delete %></h4>
 					
-					<div>
+					<div class="toggle">
 
 						<ul>
 
