@@ -12,56 +12,8 @@
    <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
 
 
-		<SCRIPT type=text/javascript>
 
-			// Andy Langton's show/hide/mini-accordion - updated 18/03/2009
-			// Latest version @ http://andylangton.co.uk/jquery-show-hide
-
-			// this tells jquery to run the function below once the DOM is ready
-			$(document).ready(function() {
-
-				// choose text for the show/hide link - can contain HTML (e.g. an image)
-				var showText='Show';
-				var hideText='Hide';
-
-				// append show/hide links to the element directly preceding the element with a class of "toggle"
-				$('.toggle').prev().append(' (<a href="#" class="toggleLink">'+showText+'</a>)');
-
-				// hide all of the elements with a class of 'toggle'
-				$('.toggle').hide();
-
-				// capture clicks on the toggle links
-					$('a.toggleLink').click(function() {
-
-					// change the link depending on whether the element is shown or hidden
-					$(this).html ($(this).html()==hideText ? showText : hideText);
-
-					// toggle the display - uncomment the next line for a basic "accordion" style
-					//$('.toggle').hide();$('a.toggleLink').html(showText);
-					$(this).parent().next('.toggle').toggle('slow');
-
-					// return false so any link destination is not followed
-					return false;
-
-					});
-			});
-
-	
-		</SCRIPT>
-		<style type="text/css">
-			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-			#sortable li span { position: absolute; margin-left: -1.3em; }
-			</style>
-			<script type="text/javascript">
-			$(function() {
-				$("#sortable").sortable();
-				$("#sortable").disableSelection();
-			});
-		</script>
-
-
-  <!--Estilos jquery
+  <!--Estilos jquery-->
 
 	
 		
@@ -95,7 +47,7 @@
 
 
 
-  fin estilos jquery -->
+  <!--fin estilos jquery -->
 </head>
 
 
