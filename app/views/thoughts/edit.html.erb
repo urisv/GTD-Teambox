@@ -1,0 +1,8 @@
+
+
+<!-- edit.html.erb -->
+<h1>Editing Thoughts</h1>
+ 
+<%= render :partial => "form", :locals => { :thought => @thought, :button_label => "Update Item" } %>
+ 
+<%= link_to 'Back', thoughts_path %>

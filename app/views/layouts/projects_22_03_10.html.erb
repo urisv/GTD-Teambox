@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Projectoos: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold' %>
+ 
+
+  <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+   <%= javascript_include_tag :defaults %>
+   <%= javascript_include_tag 'jquery-1.3.2.min' %>
+   <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+
+
+		<SCRIPT type=text/javascript>
+
+			// Andy Langton's show/hide/mini-accordion - updated 18/03/2009
+			// Latest version @ http://andylangton.co.uk/jquery-show-hide
+
+			// this tells jquery to run the function below once the DOM is ready
+			$(document).ready(function() {
+
+				// choose text for the show/hide link - can contain HTML (e.g. an image)
+				var showText='DESPLEGAR';
+				var hideText='PLEGAR';
+
+				// append show/hide links to the element directly preceding the element with a class of "toggle"
+				$('.toggle').prev().append(' (<a href="#" class="toggleLink">'+showText+'</a>)');
+
+				// hide all of the elements with a class of 'toggle'
+				$('.toggle').hide();
+
+				// capture clicks on the toggle links
+					$('a.toggleLink').click(function() {
+
+					// change the link depending on whether the element is shown or hidden
+					$(this).html ($(this).html()==hideText ? showText : hideText);
+
+					// toggle the display - uncomment the next line for a basic "accordion" style
+					//$('.toggle').hide();$('a.toggleLink').html(showText);
+					$(this).parent().next('.toggle').toggle('slow');
+
+					// return false so any link destination is not followed
+					return false;
+
+					});
+			});
+
+	
+		</SCRIPT>
+		<style type="text/css">
+			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+			#sortable li span { position: absolute; margin-left: -1.3em; }
+			</style>
+			<script type="text/javascript">
+			$(function() {
+				$("#sortable").sortable();
+				$("#sortable").disableSelection();
+			});
+		</script>
+
+
+  <!--Estilos jquery
+
+	
+		
+	    <script type="text/javascript">
+            $(function() {
+                $("#accordion").accordion({
+                    event: "mouseover"
+                });
+            });
+            $(function() {
+                $("#accordion2").accordion({
+                    event: "mouseover"
+                });
+            });
+            $(function() {
+                $("#accordion3").accordion({
+                    event: "mouseover"
+                });
+            });
+            </script>
+            <style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 50px;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+	     </style>	
+
+
+
+  fin estilos jquery -->
+</head>
+<body>
+
+<p style="color: green"><%= flash[:notice] %></p>
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>

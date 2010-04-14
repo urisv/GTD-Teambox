@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  description: MyText
+  cost: 1
+  cost_type: MyString
+  position: 1
+  description_textilized: MyText
+  list: 
+
+two:
+  description: MyText
+  cost: 1
+  cost_type: MyString
+  position: 1
+  description_textilized: MyText
+  list: 

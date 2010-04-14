@@ -1,118 +1,298 @@
-<table width="100%" border="1">
-<tr>
-<td width="250px" valign="top" align="center">
-<h2>Personal Task</h2>
-</td>
-
-<td width="500px">
-<table width="500px" border="0" valign="top">
-  <tr valign="top">
-    <td>
-	<!--<h2>Tasks in my projects</h2>-->
-    </td>
-    <td align="right">
-	
-    </td>
-    <td align="right">
-	
-    </td>
-    <td align="right">
-	<h3><%= link_to 'New_Project', new_project_path %></h3>
-    </td>
-  </tr>
 
 
-  <tr>
+<!--Integracion del codigo Pantallazo de Teambox -->
 
 
-   <div id="accordion">
+		<div style="border-bottom: 1px solid rgb(170, 170, 85); display: block; width: 100%; background-color: rgb(255, 255, 153); font-size: 12px;">
+			<div style="padding: 5px 0pt 5px 20px;">
+				As an Early Adopter in Teambox, we'd like to thank you for your loyalty!
+				<a href="mailto:earlyadopters@teambox.com">Email us explaining how you use Teambox</a>
+				to ask for your gift.
+				</div>
+			</div>
+		
+		<div class="container">
+			<div class="header">
+				<h1>
+					<a href="http://app.teambox.com/" tabindex="1"><span>Teambox</span></a>
+					</h1>
+				</div>
+			
+			<div class="global_navigation"><div class="global" id="global"><ul><li><a href="http://app.teambox.com/users/2585" tabindex="50">urisvg</a> </li><li><a href="http://app.teambox.com/account/settings" tabindex="51">Opciones</a> </li><li><a href="http://app.teambox.com/logout" tabindex="53">Salir</a> </li></ul></div><div class="clear"></div></div>
+			
+			<div class="upgrade_header">¿Te gusta Teambox? ¡Somos trabajadores como tú! <a href="http://app.teambox.com/plan">Compra una cuenta premium</a> para apoyarnos.</div>
+			<div class="navigation">
+				
+				<div class="main" id="main"><ul><li class="welcome"><a href="http://app.teambox.com/welcome" li_class="welcome" tabindex="100">Bienvenido</a> </li><li id="projects_tab_container"><a href="http://app.teambox.com/projects" id="projects_tab" tabindex="101">Proyectos <img alt="Triangle" class="triangle" src="settings_files/triangle.png"></a><ul id="projects_tab_list">
+								<li>
+									<a href="http://app.teambox.com/projects/ppppp" class="proj">ppppaaaa</a>
+									<div class="quicklinks">
+										<a href="http://app.teambox.com/projects/ppppp/conversations"><img alt="Conversaciones" src="settings_files/drop_conv.png" title="Conversaciones"></a>
+										<a href="http://app.teambox.com/projects/ppppp/task_lists"><img alt="Tareas" src="settings_files/drop_tasklist.png" title="Tareas"></a>
+										<a href="http://app.teambox.com/projects/ppppp/pages"><img alt="Páginas" src="settings_files/drop_page.png" title="Páginas"></a>
+										</div>
+									</li>
+								<li>
+									<a href="http://app.teambox.com/projects/proyecto2" class="proj">proyecto2</a>
+									<div class="quicklinks">
+										<a href="http://app.teambox.com/projects/proyecto2/conversations"><img alt="Conversaciones" src="settings_files/drop_conv.png" title="Conversaciones"></a>
+										<a href="http://app.teambox.com/projects/proyecto2/task_lists"><img alt="Tareas" src="settings_files/drop_tasklist.png" title="Tareas"></a>
+										<a href="http://app.teambox.com/projects/proyecto2/pages"><img alt="Páginas" src="settings_files/drop_page.png" title="Páginas"></a>
+										</div>
+									</li>
+								<li>
+									<a href="http://app.teambox.com/projects/proyecto3" class="proj">proyecto3</a>
+									<div class="quicklinks">
+										<a href="http://app.teambox.com/projects/proyecto3/conversations"><img alt="Conversaciones" src="settings_files/drop_conv.png" title="Conversaciones"></a>
+										<a href="http://app.teambox.com/projects/proyecto3/task_lists"><img alt="Tareas" src="settings_files/drop_tasklist.png" title="Tareas"></a>
+										<a href="http://app.teambox.com/projects/proyecto3/pages"><img alt="Páginas" src="settings_files/drop_page.png" title="Páginas"></a>
+										</div>
+									</li>
+								</ul>
+							</li><li class="new"><a href="http://app.teambox.com/projects/new" li_class="new" tabindex="102">+</a> </li>
+							<li><a href="http://app.teambox.com/projects/ppppp" class="active" tabindex="103">pppp</a> </li><li><a href="http://app.teambox.com/projects/proyecto2" tabindex="103">proyecto2</a> </li></ul></div></div>
+			
+		
+			<div class="wrapper">
+				
+				
+				<div class="project_navigation">
+				<div id="project" class="project">
+				<ul><li><a tabindex="150" href="/projects/ppppp">Resumen</a> </li>
+					<li><a tabindex="151" href="/projects/ppppp/conversations">Conversaciones</a> </li>
+					<li><a tabindex="152" href="/projects/ppppp/task_lists">Tareas</a> </li>
+					<li><a tabindex="153" href="/projects/ppppp/pages">Páginas</a> </li>
+					<li><a tabindex="154" href="/projects/ppppp/uploads">Archivos</a> </li>
+					<li class="right_side"><a tabindex="156" li_class="right_side" href="/projects/ppppp/people">Personas</a> </li>
+					<li class="right_side"><a tabindex="155" li_class="right_side" class="active" href="/projects/ppppp/settings">Proyecto</a> </li>
+				</ul>
+				</div>
+				
+				<div class="clear"></div>
+				</div>
+				
+				
+				
+				<div class="content_wrap_GTD">
+					<div id="content" class="content">
+						<input type="hidden" value="urisvg" name="current_user_login" id="current_user_login"/>
+						
+						<h2>Bandeja de entrada</h2>
 
 
-<% @projects.each do |project| %><!--primer for-->
+
+						<div id="todos">
+
+							<%= render @projects %>
+
+
+						</div>
+						<br />
+
+							<% form_remote_for Project.new do |f| -%>
+							  <%= f.text_field :name %>
+							  <%= f.hidden_field :processed,:value=>"1" %> 
+
+							  <%= f.submit "Add" %>
+							<% end -%>
+
+						<br />
+
+
+					</div></div>
+				
+				
+				
+				<div class="content_wrap_GTD">
+					<div id="content" class="content">
+						<input type="hidden" value="urisvg" name="current_user_login" id="current_user_login"/>
+						
+						<h2>Proyectos</h2><span style="float: right;"> <%= link_to 'Nuevo Proyecto', new_project_path %></span>
+
+						 <div id="accordion">
+                                                 
+
+
+						<% @projects.each do |project| %><!--primer for-->
+
+						 <% if !project.processed %>  
+						 
+
+						   <p> <span style="font-weight: bold; color: #000000">
+						    <%= link_to project.name, project %></span></p>
+						    <!--<%= link_to 'Edit', edit_project_path(project) %>
+						    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %> -->
+						    
+
+							  <div class="toggle">
+						  
+								<ul>
+								       <div>
+			
+			
+									<% project.lists.each do |l| %> 
+
+									<li>	
+											 
+											<%= h l.title %>
+											
+											<%= link_to '(Show', project_list_path(project, l) %>
+											<%= link_to 'Edit', edit_project_list_path(project, l) %>
+											<%= link_to 'Destroy)', project_list_path(project, l), :confirm => 'Are you sure?', :method => :delete %>
+					
+											<div class="toggle">
+												<br/>
+
+												<ul>
+                                                                                                        <div>
+													<% l.tasks.each do |t| %> 
+												        <li>
+
+														
+															
+															 <input type=checkbox> 
+															<%= h t.description %>
+															
+															<%= link_to '(Show', project_list_task_path(project, l,t) %>
+															<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
+															<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
+															
+														
+
+
+												        </li>
+													<% end %>
+                                                                                                       </div>
+
+												</ul>
+											<br/>
+
+											</div>
+										</li>
+										 
+									<% end %> 
+
+								      </ul>
+				
+
+							   </div>
+
+						<% end %><!--primer for-->
+
+
+						<% end %>
+
+						
+						</div>
+                                      
+
+						
+					</div></div>
+				
+				<div class="content_wrap_GTD">
+					<div id="content" class="content">
+						<input type="hidden" value="urisvg" name="current_user_login" id="current_user_login"/>
+						
+						<h2>Acciones Siguientes</h2>
+						
+
+							 <div>
 
    
- 
+									<% @projects.each do |project| %><!--primer for-->
 
-    <h3><%= link_to project.name, project %>
-    
-    <%= link_to 'Show', project %>
-    <%= link_to 'Edit', edit_project_path(project) %>
-    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %> </h3>
-    
-  
-  
-          <div class="toggle">
-  
-		<ul>
-                       <div>
-			
-			
-			<% project.lists.each do |l| %> 
+		  								<% project.lists.each do |l| %> 
+											<% l.tasks.each do |t| %> 
+								
+				                                        
 
-			<li>	
-					 
-					 
-					<h4><%= link_to  l.title, project_list_path(project, l) %>
-                                        <%= link_to '(Show', project_list_path(project, l) %>
-					<%= link_to 'Edit', edit_project_list_path(project, l) %>
-					<%= link_to 'Destroy)', project_list_path(project, l), :confirm => 'Are you sure?', :method => :delete %></h4>
-					
-					<div class="toggle">
+								
+											 <input type=checkbox> 
+											<%= h t.description %>
+											
+											<%= link_to '(Show', project_list_task_path(project, l,t) %>
+											<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
+											<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
+								
 
-						<ul>
+				                                       			 <br/>
+											<% end %>
+										<% end %> 
+
+		
+
+									<% end %><!--primer for-->
 
 
-
-							<% l.tasks.each do |t| %> 
-                                                        <li>
-
-								<p> 
-									<h5> 
-									 <input type=checkbox> 
-					
-									<%= link_to  t.description, project_list_task_path(project, l,t) %>
-								        <%= link_to '(Show', project_list_task_path(project, l,t) %>
-									<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
-									<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
-									</h5>
-								</p>
-
-
-                                                        </li>
-							<% end %>
-
-						</ul>
-
-					</div>
-				</li>
-				 
-			<% end %> 
-
-		      </ul>
+		     							 
                 
 
-           </div>
-
-<% end %><!--primer for-->
-
-</div>
-
-</tr>
+           							</div>
 
 
+					</div></div>
+				
+				<div class="clear"/>
+			</div>
+			
 
-
-
-
-
-</table>
-
-<br />
-</td>
-<td width="250px" valign="top" align="center">
-<h2>Next Action</h2>
-</td>
-</tr>
-<table>
+			
+		<div class="footer">
+			<span>
+					© 2010
+				</span>
+			<a href="http://www.teambox.com/">Teambox</a>
+			<div class="right">
+				<a href="http://help.teambox.com/">¿Problemas? ¡Envía feedback!</a>
+				<a href="http://app.teambox.com/activities.m">Versión móvil</a>
+				<a href="http://help.teambox.com/faqs/using-teambox/projects">Ayuda</a>
+				</div>
+			</div>
+			
+		</div>
+		<div id="facebox" style="display: none;">
+		<div class="popup">
+			<table>
+				<tbody>
+					<tr>
+						<td class="nw"></td>
+						<td class="n"></td>
+						<td class="ne"></td>
+						</tr>
+					<tr>
+						<td class="w"></td>
+						<td class="body">
+							<div class="footer"></div>
+							<a alt="Close" class="close" href="#"></a>
+							<div class="content"></div>
+							</td>
+						<td class="e"></td>
+						</tr>
+					<tr>
+						<td class="sw"></td>
+						<td class="s"></td>
+						<td class="se"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			//<![CDATA[
+				new PeriodicalExecuter(format_posted_date_es, 30);
+				//]]>
+		</script>
+		
+	<script type="text/javascript" src="settings_files/support.js"></script><script src="settings_files/tender_widget.js" type="text/javascript"></script><div><div id="tender_toggler"><a href="#" id="tender_toggler_link">Help &amp; Support</a></div></div>
+	<script type="text/javascript">var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E")); </script><script src="settings_files/ga.js" type="text/javascript"></script>
+		
+		
+		
+	<script type="text/javascript">try { var pageTracker = _gat._getTracker("UA-9427125-4"); pageTracker._setVar('free'); pageTracker._trackPageview(); } catch(err) {}</script>
+    
+    
+    
+<!--Final del codigo Pantallazo de Teambox -->
 
 

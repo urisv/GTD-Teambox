@@ -1,0 +1,261 @@
+<table width="100%" border="1">
+<tr>
+<td width="250px" valign="top" align="center">
+
+
+
+<h2>Pensamientos_PROJECTOs</h2> <%= render :partial => @tasks %> 
+
+<div id="todos">
+
+
+
+<%= render @projects %>
+
+
+
+
+</div>
+
+<br />
+
+<% form_remote_for Project.new do |f| -%>
+  <%= f.text_field :name %>
+  <%= f.hidden_field :processed,:value=>"1" %> 
+  
+
+  
+  <%= f.submit "Add" %>
+<% end -%>
+
+
+
+
+<br />
+
+
+</td>
+
+
+
+
+
+
+<td width="400px" valign="top">
+<table width="500px" border="0" >
+  <tr >
+    <td>
+	<!--<h2>Tasks in my projects</h2>-->
+    </td>
+    <td align="right">
+	
+    </td>
+    <td align="right">
+	
+    </td>
+    <td align="right">
+	<h3><%= link_to 'New_Project', new_project_path %></h3>
+    </td>
+  </tr>
+
+
+
+
+  <tr>
+
+
+
+  <div id="accordion">
+
+
+<% @projects.each do |project| %><!--primer for-->
+
+ <% if !project.processed %>  
+ 
+
+    <h3><%= link_to project.name, project %>
+    
+    <%= link_to 'Show', project %>
+    <%= link_to 'Edit', edit_project_path(project) %>
+    <%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %> </h3>
+    
+  
+  
+          <div class="toggle">
+  
+		<ul>
+                       <div>
+			
+			
+			<% project.lists.each do |l| %> 
+
+			<li>	
+					 
+					 
+					<h4><%= link_to  l.title, project_list_path(project, l) %>
+                                        <%= link_to '(Show', project_list_path(project, l) %>
+					<%= link_to 'Edit', edit_project_list_path(project, l) %>
+					<%= link_to 'Destroy)', project_list_path(project, l), :confirm => 'Are you sure?', :method => :delete %></h4>
+					
+					<div class="toggle">
+
+						<ul>
+
+
+
+							<% l.tasks.each do |t| %> 
+                                                        <li>
+
+								<p> 
+									<h5> 
+									 <input type=checkbox> 
+					
+									<%= link_to  t.description, project_list_task_path(project, l,t) %>
+								        <%= link_to '(Show', project_list_task_path(project, l,t) %>
+									<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
+									<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
+									</h5>
+								</p>
+
+
+                                                        </li>
+							<% end %>
+
+						</ul>
+
+					</div>
+				</li>
+				 
+			<% end %> 
+
+		      </ul>
+                
+
+           </div>
+
+<% end %><!--primer for-->
+
+
+<% end %>
+
+
+</div>
+
+</tr>
+
+
+
+
+
+
+</table>
+
+<br />
+
+
+
+</td>valign="top"
+
+
+
+
+
+
+
+
+
+<td width="350px" valign="top" align="left">
+<h2>Next Action</h2>
+
+
+-----------------------------------------
+
+  
+    <div>
+  
+		<ul>
+                       <div>
+			
+			<li>
+
+			<p> 
+			<h5> 
+
+   
+
+
+<% @projects.each do |project| %><!--primer for-->
+
+  
+
+
+
+
+			<% project.lists.each do |l| %> 
+
+				
+					 
+				
+					
+					
+
+						
+
+
+
+							<% l.tasks.each do |t| %> 
+								
+                                                        
+
+								
+									 <input type=checkbox> 
+					
+									<%= link_to  t.description, project_list_task_path(project, l,t) %>
+								        <%= link_to '(Show', project_list_task_path(project, l,t) %>
+									<%= link_to 'Edit', edit_project_list_task_path(project, l, t) %>
+									<%= link_to 'Destroy)', project_list_task_path(project, l,t), :confirm => 'Are you sure?', :method => :delete %>
+								
+
+                                                        <br/>
+							<% end %>
+
+						
+
+					
+				
+				 
+			<% end %> 
+
+		
+
+<% end %><!--primer for-->
+
+	</h5>
+			</p>
+
+			</li>
+
+		      </ul>
+                
+
+           </div>
+
+
+
+
+-----------------------------------------
+
+
+
+
+
+
+
+
+
+
+</td>
+</tr>
+<table>
+
+

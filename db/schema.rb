@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090907041654) do
+ActiveRecord::Schema.define(:version => 20091118203313) do
 
   create_table "lists", :force => true do |t|
     t.string   "title"
@@ -24,12 +24,24 @@ ActiveRecord::Schema.define(:version => 20090907041654) do
     t.datetime "updated_at"
   end
 
+  create_table "next_tasks", :force => true do |t|
+    t.text     "description"
+    t.integer  "cost"
+    t.string   "cost_type"
+    t.integer  "position"
+    t.text     "description_textilized"
+    t.integer  "list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "projects", :force => true do |t|
     t.string   "name"
     t.string   "url"
     t.string   "logo_file_name"
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
+    t.boolean  "processed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -41,6 +53,12 @@ ActiveRecord::Schema.define(:version => 20090907041654) do
     t.integer  "position"
     t.text     "description_textilized"
     t.integer  "list_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "thoughts", :force => true do |t|
+    t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

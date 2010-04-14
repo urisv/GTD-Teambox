@@ -1,0 +1,16 @@
+<h1>Thought</h1>
+ 
+<div id="todos">
+<%= render @thoughts %>
+</div>
+<br />
+ 
+
+formulari ------------
+
+
+
+<% form_remote_for Thought.new do |f| -%>
+  <%= f.text_field :description %>
+  <%= f.submit "Add" %>
+<% end -%>

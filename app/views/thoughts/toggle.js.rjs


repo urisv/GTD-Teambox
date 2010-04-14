@@ -1,0 +1,3 @@
+# toggle.js.rjs
+page.replace "thought_#{@thought.id}", :partial => 'thought', :object => @thought
+page.visual_effect :highlight, "thought_#{@thought.id}"

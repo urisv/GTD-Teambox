@@ -1,0 +1,8 @@
+
+
+<!-- new.html.erb -->
+<h1>New Thought</h1>
+ 
+<%= render :partial => "form", :locals => { :thought => @thought, :button_label => "Add Item" } %>
+ 
+<%= link_to 'Back', thoughts_path %>

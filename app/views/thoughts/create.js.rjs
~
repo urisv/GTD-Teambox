@@ -1,0 +1,6 @@
+# create.js.rjs
+
+page.insert_html :bottom, :todos, :partial => 'thoughts', :object => @thoughts
+page.visual_effect :highlight, "thoughts_#{@thoughts.id}"
+page[:new_thoughts].reset
+flash.discard

@@ -1,0 +1,14 @@
+<!-- _project.html.erb -->
+
+<% if project.processed %>
+
+<% div_for project do %>
+  <%= h project.name %>
+  procesSed:<%= h project.processed %>
+  (<%= link_to 'Edit', edit_project_path(project) %>)
+  <small>(<%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete %>)</small>
+ 
+
+<% end %>
+
+<% end %>

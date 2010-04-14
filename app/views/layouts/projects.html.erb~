@@ -4,12 +4,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Projectos: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
-  <%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+  <title>Projectos árbol: <%= controller.action_name %></title>
+ <!-- <%= stylesheet_link_tag 'scaffold' %>-->
+ 
 
-   <%= javascript_include_tag 'jquery-1.3.2.min' %>
-   <%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+<%= stylesheet_link_tag 'jquery-ui-1.7.2.custom' %>
+<%= javascript_include_tag :defaults %>
+<%= javascript_include_tag 'jquery-1.3.2.min' %>
+<%= javascript_include_tag 'jquery-ui-1.7.2.custom.min' %>
+
+
+
 
 
 		<SCRIPT type=text/javascript>
@@ -48,6 +53,8 @@
 
 	
 		</SCRIPT>
+
+
 		<style type="text/css">
 			#sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
 			#sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
@@ -96,11 +103,51 @@
 
 
   fin estilos jquery -->
+  
+ 
+
+
+
+ <!-- Inicio de la metadades de teambox -->
+           
+		
+<%= stylesheet_link_tag 'application' %>
+<%= stylesheet_link_tag 'print' %>
+<!--<%= javascript_include_tag 'sprockets' %>-->  <!-- Esto esta en el diseño original del Teambox -->
+	
+		
+		
+
+		
+		
+		<script type="text/javascript">
+			//<![CDATA[
+				
+				
+				//]]>
+</script>
+<style charset="utf-8" type="text/css">
+#tender_window{ position:absolute; top:20px; left:50%; margin-left:-340px; width:680px; height:615px; padding:3px; background:url(https://teambox.tenderapp.com/images/widget/overlay_back.png); z-index:9999; }#tender_window iframe{ border:none; width:100%; height:100%; } 
+#tender_window #tender_frame{ width:100%; height:100%; background:url(https://teambox.tenderapp.com/images/widget/loader.gif) 50% 50% no-repeat #fff; } #tender_closer{ position:absolute; top:18px; right:18px; color:#fff; font-family:Helvetica, Arial, sans-serif; font-size:12px; font-weight:bold; text-decoration:none; border:none; } #tender_toggler{ position:absolute; top:100px; right:0px; width:33px; height:105px; padding:3px 0 3px 3px; background:url(https://teambox.tenderapp.com/images/widget/overlay_back.png); } #tender_toggler_link{ display:block; width:100%; height:100%; text-decoration:none; border:none; background:#006699; text-indent:-9999px; background:url(https://teambox.tenderapp.com/images/widget/tab_text.gif); } 
+</style>
+
+
+<!-- Final de la metadades de teambox -->
+
+  
+  
 </head>
 
+<body class="edit_projects es production">
 
-<p style="color: green"><%= flash[:notice] %></p>
 
+<!--<p style="color: green"><%= flash[:notice] %></p>-->
+
+<% flash.each do |key, msg| %>
+  <%= content_tag :div, msg, :id => key %>
+<% end %>
+
+árbol
 <%= yield %>
 
 </body>

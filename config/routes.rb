@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  
+map.resources :thoughts, :member => { :toggle => :put }
+map.root :thoughts
+
+
+
 
 
  #map.resources :projects, :has_many => :lists

@@ -1,0 +1,11 @@
+<!-- _form.html.erb -->
+<% form_for(thought) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :task %>
+  </p>
+  <p>
+    <%= f.submit button_label %>
+  </p>
+<% end %>

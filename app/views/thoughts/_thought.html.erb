@@ -1,0 +1,18 @@
+
+<!-- _todo_item.html.erb -->
+
+
+<% div_for thought do %>
+
+<%= check_box_tag :completed_at, "1", !thought.completed_at.nil?,
+                  :onclick => remote_function(:url => toggle_thought_path(thought), :method => :put) %>
+  
+
+
+  <%= h thought.description %>
+  (<%= link_to 'Edit', edit_thought_path(thought) %>)
+  <small>(<%= link_to 'Destroy', thought, :confirm => 'Are you sure?', :method => :delete %>)</small>
+ <span><%= thought.completed_at %></span>
+
+ 
+<% end %>

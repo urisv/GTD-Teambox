@@ -1,0 +1,5 @@
+# create.js.rjs
+page.insert_html :bottom, :todos, :partial => 'project', :object => @project
+page.visual_effect :highlight, "project_#{@project.id}"
+page[:new_project].reset
+flash.discard

@@ -1,4 +1,6 @@
 class ProjectsController < ApplicationController
+
+
   # GET /projects
   # GET /projects.xml
   def index
@@ -37,22 +39,27 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
   end
 
-  # POST /projects
-  # POST /projects.xml
-  def create
+ 
+
+ def create
     @project = Project.new(params[:project])
+   
 
     respond_to do |format|
       if @project.save
+       
         flash[:notice] = 'Project was successfully created.'
-        format.html { redirect_to(@project) }
+        format.html { redirect_to(projects_url) }
         format.xml  { render :xml => @project, :status => :created, :location => @project }
-      else
+	format.js
+      else   
+
         format.html { render :action => "new" }
         format.xml  { render :xml => @project.errors, :status => :unprocessable_entity }
       end
     end
   end
+
 
   # PUT /projects/1
   # PUT /projects/1.xml

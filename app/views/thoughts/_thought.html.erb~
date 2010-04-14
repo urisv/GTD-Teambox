@@ -1,0 +1,13 @@
+
+<!-- _todo_item.html.erb -->
+
+
+<% div_for thought do %>
+
+  <%= h thought.description %>
+  (<%= link_to 'Edit', edit_thought_path(thought) %>)
+  <small>(<%= link_to 'Destroy', thought, :confirm => 'Are you sure?', :method => :delete %>)</small>
+ <span><%= thought.completed_at %></span>
+
+ 
+<% end %>
